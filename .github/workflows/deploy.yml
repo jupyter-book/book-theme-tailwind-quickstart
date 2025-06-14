@@ -35,6 +35,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18.x
+      - name: Install style package
+        working-directory: style
+        run: npm install
+      - name: Build styles
+        working-directory: style
+        run: npm run build
       - name: Install MyST Markdown
         run: npm install -g mystmd
       - name: Build HTML Assets
